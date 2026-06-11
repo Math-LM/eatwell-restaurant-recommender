@@ -2,34 +2,81 @@
 
 > Make the world a tastier place!
 
-EatWell is a static web application for food enthusiasts to **share and discover amazing restaurants** from all over the world. No sign-up required — just start sharing right away!
+EatWell is a web application for food enthusiasts to **share and discover restaurants**. The project started as a static HTML/CSS site and was then evolved into a Node.js + Express app with EJS templates and local JSON persistence.
 
 ## 🔖 Version
 
-**v1.0 — Static Frontend**  
-This is the first version of the project: a fully functional HTML/CSS frontend with no backend or database. Restaurant data is static/hardcoded.
+**v2.0 — Node.js + Express + EJS**  
+This version replaces the static pages with server-rendered views and a simple backend flow to store restaurant submissions in a local JSON file.
 
-## 📄 Pages
+## ✅ What was added in v2
 
-| Page | Description |
+- Node.js server with Express
+- EJS templates for page rendering
+- Reusable partials for `<head>` and `<header>`
+- Routes for `index`, `about`, `restaurants`, `recommend`, and `confirm`
+- Form submission handled by `POST /recommend`
+- Local storage using `data/restaurant.json`
+- Static assets served from `public/`
+- Auto-reload during development with Nodemon
+
+## 📄 Main Routes
+
+| Route | Description |
 |------|-------------|
-| `index.html` | Homepage |
-| `about.html` | About the project |
-| `restaurants.html` | List of recommended restaurants |
-| `recommend.html` | Form to submit a new restaurant |
-| `confirm.html` | Submission confirmation page |
-
-## 🛣️ Roadmap
-
-- **v1.0** ✅ — Static HTML/CSS frontend
-- **v2.0** 🔜 — Node.js + Express.js backend with local JSON storage
+| `/` | Homepage |
+| `/about` | About the project |
+| `/restaurants` | List of recommended restaurants |
+| `/recommend` | Form to submit a new restaurant |
+| `/confirm` | Submission confirmation page |
 
 ## 🛠️ Tech Stack
 
 - HTML5
 - CSS3
-- (No frameworks or build tools in v1)
+- Node.js
+- Express.js
+- EJS
+- Nodemon
+
+## 📌 Requirements
+
+- Node.js installed on your machine
+- Dependencies already declared in `package.json`
+
+The project already includes:
+
+```json
+{
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js"
+	},
+	"dependencies": {
+		"express": "^5.2.1",
+		"ejs": "^3.1.10"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.14"
+	}
+}
+```
 
 ## 🚀 How to Run
 
-Simply open `index.html` in your browser. No installation needed.
+1. Install dependencies from `package.json`: `npm install`
+2. Start the project: `npm start`
+3. Open `http://localhost:3001`
+
+## 📦 Project Structure
+
+- `app.js` — Express server and routes
+- `view/` — EJS views and partials
+- `public/` — CSS and client-side scripts
+- `data/restaurant.json` — Local restaurant storage
+
+## 🛣️ Roadmap
+
+- **v1.0** ✅ — Static HTML/CSS frontend
+- **v2.0** ✅ — Node.js + Express.js + EJS + local JSON storage
+- **v3.0** 🔜 — Improvements to validation, styling, and data handling
